@@ -102,7 +102,7 @@ c2.showAdd(3,1);    //4
  　　　 1.var arr1=new Array("1","2","3");
           2.var arr2=new Array("4","5","6");
           3.Array.prototype.push.apply(arr1,arr2);    //得到合并后数组的长度，因为push就是返回一个数组的长度
-          也可以这样理解，arr1调用了push方法，参数是通过apply将数组转换为参数列表的集合
+       也可以这样理解，arr1调用了push方法，参数是通过apply将数组转换为参数列表的集合
  
-          通常在什么情况下，可以使用apply类似Math.max等之类的特殊用法：
+       通常在什么情况下，可以使用apply类似Math.max等之类的特殊用法：
           一般在目标函数只需要n个参数列表，而不接收一个数组的形式，可以通过apply的方式巧妙地解决这个问题。
