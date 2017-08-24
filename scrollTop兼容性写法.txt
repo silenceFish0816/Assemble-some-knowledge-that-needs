@@ -30,3 +30,27 @@ window.pageXOffset; pageYOffset
 var scrollTop=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;
 
 }
+
+
+
+    //通过JSON封装scrollTop
+    function scroll() {
+        if(window.pageYOffset!=null)//ie9+ 和 其他浏览器
+        {
+            return{
+                left:window.pageXOffset,
+                top:window.pageYOffset
+            }
+        }
+        else if(document.compatMode=="Css1Compat")//申明了DTD的
+        {
+            return{
+                left:document.documentElement.scrollLeft,
+                top:document.documentElement.scrollTop
+            }
+        }
+        return{//剩下的就是怪异模式
+            left:document.body.scrollLeft,
+            top:document.body.scrollTop
+        }
+    }
