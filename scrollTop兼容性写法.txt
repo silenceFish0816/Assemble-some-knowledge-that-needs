@@ -1,0 +1,31 @@
+知识准备：
+Html基本结构访问方法
+文档是 document
+
+访问 head body title html
+
+方法是：
+document.head
+document.body
+document.title
+没有document.html 取而代之的是 document.documentElement;
+
+
+
+页面滚动效果
+window.onscroll=function(){
+页面滚动语句；
+
+//谷歌浏览器和没有声明DTD<DOCTYPE>的写法
+document.body.scrollTop;
+
+//火狐和其他浏览器
+document.documentElement.scrollTop;
+
+//ie9+ 和 最新浏览器都认识
+window.pageXOffset; pageYOffset
+
+//兼容性写法
+var scrollTop=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;
+
+}
