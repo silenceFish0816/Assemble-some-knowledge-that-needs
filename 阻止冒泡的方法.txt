@@ -1,0 +1,13 @@
+分为标准浏览器 和 IE浏览器
+
+W3C的方法是 event.stopPropagation()
+IE的方法是 event.cancelBubble=true
+
+
+兼容性写法
+if(event&&event.stopPropagation()){
+event.stopPropagation();  //W3C标准
+}
+else{
+event.cancelBubble=true;  //i.e. 678 i.e.浏览器
+}
